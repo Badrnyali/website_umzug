@@ -1,0 +1,26 @@
+{
+  "name": "salah_umzug_2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.79",
+    "dotenv": "^16.0.3",
+    "emailjs-com": "^3.2.0",
+    "vite-plugin-vuetify": "^1.0.2",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vue-tsc": "^1.0.24"
+  }
+}
