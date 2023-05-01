@@ -24,8 +24,8 @@ import InfoSection from "../components/InfoSection.vue";
 import FooterSection from "../components/FooterSection.vue";
 import FormContainer from "../components/FormContainer.vue";
 import { useRoute } from "vue-router";
-import { Services } from "../texte.ts";
-import type { IServices } from "../texte.ts";
+import { Services } from "../texte";
+import type { IServices } from "../texte";
 
 const route = useRoute();
 const id = route.params.id;

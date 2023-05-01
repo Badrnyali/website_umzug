@@ -25,5 +25,5 @@ import FormContainer from "../components/FormContainer.vue";
 import FooterSection from "../components/FooterSection.vue";
 import Services from "../components/ServicesSection.vue";
 import FeatureSection from "../components/FeatureSection.vue";
-import { Home } from "../texte.ts";
+import { Home } from "../texte";
 </script>
