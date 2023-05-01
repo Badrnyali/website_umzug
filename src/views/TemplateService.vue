@@ -27,8 +27,15 @@ import { useRoute } from "vue-router";
 import { Services } from "../texte";
 import type { IServices } from "../texte";
 
+type RouteStrings =
+  | "privat"
+  | "firma"
+  | "senioren"
+  | "muell"
+  | "wohnungsaufloesung"
+  | "internationale";
 const route = useRoute();
-const id = route.params.id;
+const id = route.params.id as RouteStrings;
 const serviceObject = reactive<IServices>(Services[id]);
 </script>
 <style scoped>

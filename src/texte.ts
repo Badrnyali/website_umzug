@@ -11,6 +11,7 @@
 interface IHero {
   title: string,
   checkLists: string[],
+  banner: string,
 }
 
 interface IInfo {
@@ -38,7 +39,7 @@ export const Home = {
   },
 };
 export const Services = {
-  privat: {
+  'privat': {
     hero: {
       banner: "url('/assets/Banner-3.png')",
       title:
@@ -56,7 +57,7 @@ export const Services = {
       image: "/assets/Banner-2.jpg",
     },
   },
-  firma: {
+  'firma': {
     hero: {
       banner: "url('/assets/Banner-3.png')",
       title:
@@ -74,7 +75,7 @@ export const Services = {
       image: "/assets/Banner.jpg",
     },
   },
-  senioren: {
+  'senioren': {
     hero: {
       banner: "url('/assets/Banner-4.png')",
       title:
@@ -92,7 +93,7 @@ export const Services = {
       image: "/assets/Banner.jpg",
     },
   },
-  muell: {
+  'muell': {
     hero: {
       banner: "url('/assets/Banner-5.png')",
       title:
@@ -110,7 +111,7 @@ export const Services = {
       image: "/assets/Banner.jpg",
     },
   },
-  wohnungsaufloesung: {
+  'wohnungsaufloesung': {
     hero: {
       banner: "url('/assets/Banner.jpg')",
       title:
@@ -128,7 +129,7 @@ export const Services = {
       image: "/assets/Banner.jpg",
     },
   },
-  internationale: {
+  'internationale': {
     hero: {
       banner: "url('/assets/Banner.jpg')",
       title:
