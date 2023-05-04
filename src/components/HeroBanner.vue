@@ -2,7 +2,7 @@
   <div class="banner center">
     <div class="overlay"></div>
     <v-row>
-      <v-col cols="12" sm="6">
+      <v-col cols="12" sm="8">
         <v-card class="card pl-6" color="transparent">
           <v-card-text>
             <h1 class="pb-5 heading text-white">
@@ -54,7 +54,7 @@ defineProps({
   height: 100%;
   position: absolute;
   bottom: 0;
-  background-color: #00000080;
+  background-color: #00000092;
 }
 .banner .card {
   box-shadow: none !important;

@@ -31,7 +31,7 @@ li {
   padding: 1em;
   border-radius: 8px;
   transition: 0.3s ease-in-out;
-  width: 49%;
+  width: calc(100% -20px);
   cursor: pointer;
 }
 li:hover {

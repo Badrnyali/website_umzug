@@ -1,6 +1,6 @@
 <template>
   <v-row class="d-flex align-center justify-center px-10 py-14 container">
-    <v-col cols="12" sm="6">
+    <v-col cols="12" md="6">
       <v-card class="card-transparent">
         <v-card-text>
           <h2 class="pb-4 heading">
@@ -12,9 +12,10 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="12" sm="6">
+    <v-col cols="12" md="6" class="d-flex">
       <v-img
         :src="image"
+        class="pl-5"
         max-height="500"
         max-width="500"
         min-width="100%"

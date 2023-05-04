@@ -3,10 +3,13 @@
     <v-row class="d-flex justify-space-between" no-gutters>
       <div class="d-flex flex-column">
         <v-list>
-          <v-list-item v-for="link, index in links" text :key="index">
-            <v-list-item-content>
-              <v-list-item-title>{{ link.text }}</v-list-item-title>
-            </v-list-item-content>
+          <v-list-item
+            v-for="(link, index) in links"
+            class="py-0"
+            text
+            :key="index"
+          >
+            <v-list-item-title class="py-0">{{ link.text }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </div>

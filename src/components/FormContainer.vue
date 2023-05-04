@@ -2,12 +2,12 @@
   <div class="form-container px-14 container">
     <v-row class="d-flex align-center justify-center px-6 pl-0 py-10">
       <v-col cols="12" v-show="!submited">
-        <form color="white" class="form">
+        <form color="white" class="form" @submit.prevent="submit()">
           <h2 class="mb-5">Ihre Nachricht an uns:</h2>
           <v-text-field v-model="data.name" label="Name"></v-text-field>
           <v-text-field
             v-model="data.email"
-            :rules="emailRules"
+            :error="!emailIsValid"
             label="E-mail"
             required
           ></v-text-field>
@@ -15,19 +15,13 @@
           <v-textarea
             v-model="data.nachricht"
             label="Ihre Nachricht"
-            required
           ></v-textarea>
-          <CtaButtonVue
-            title="Submit"
-            class="ml-0 w-30"
-            link="#"
-            @click="submit()"
-          />
+          <v-btn class="cta_button ml-0 w-30" type="submit">Submit</v-btn>
         </form>
       </v-col>
       <Transition>
         <v-col cols="12" sm="6" v-if="submited"
-          ><v-alert dense type="success">
+          ><v-alert dense type="success" variant="outlined">
             Ihre Nachricht wurde gesendet! Wir werden Ihnen bald kontaktiere.
           </v-alert>
         </v-col>
@@ -36,9 +30,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-import CtaButtonVue from "./ui-packages/CtaButton.vue";
+import { ref, reactive, computed } from "vue";
 import emailjs from "emailjs-com";
+import { watch } from "vue";
 
 const data = reactive({
   email: "",
@@ -46,14 +40,20 @@ const data = reactive({
   telefon: "",
   name: "",
 });
-const submited = ref(false);
-const emailRules = ref([
-  (v: any) => !!v || "E-mail is required",
-  (v: any) => /.+@.+/.test(v) || "E-mail must be valid",
-]);
 
-const submit = () => {
-  submited.value = true;
+const submited = ref(false);
+const emailIsValid = ref(true);
+
+watch(
+  () => data.email,
+  () => {
+    if (data.email.length) {
+      emailIsValid.value = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
+    }
+  }
+);
+
+const emailRequest = () => {
   emailjs
     .send(
       import.meta.env.VITE_SERVICEID,
@@ -69,6 +69,14 @@ const submit = () => {
         console.log("FAILED...", error.text);
       }
     );
+};
+
+const submit = () => {
+  if (emailIsValid.value) {
+    submited.value = true;
+    return emailRequest();
+  }
+  return alert("Email ist nicht gültig!");
 };
 </script>
 <style>
@@ -93,5 +101,9 @@ const submit = () => {
 .form .v-enter-from,
 .form .v-leave-to {
   opacity: 0;
+}
+
+.v-alert__prepend {
+  display: none !important;
 }
 </style>
