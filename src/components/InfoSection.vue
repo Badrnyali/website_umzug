@@ -14,10 +14,9 @@
     </v-col>
     <v-col cols="12" md="6" class="d-flex">
       <v-img
-        :src="image"
+        :srcset="`${image}-w-480.png 480w, ${image}-w-768.png 768w, ${image}-w-1024.png 1024w, ${image}-w-1400.png 1399w`"
+        :src="image + '.png'"
         class="pl-5"
-        max-height="500"
-        max-width="500"
         min-width="100%"
         contain
       ></v-img>

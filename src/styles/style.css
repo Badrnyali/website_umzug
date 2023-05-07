@@ -40,3 +40,17 @@ address {
 .container {
   background-color: #f1f2f4;
 }
+.cta_button {
+  background-color: rgb(92 229 38) !important;
+  color: #000;
+}
+.cta_button:hover {
+  background-color: rgba(100, 239, 45);
+  transform: scale(1.02);
+  transition: All 0.3s ease-in;
+}
+@media screen and (max-width: 480px) {
+  .cta_button {
+    width: 100% !important;
+  }
+}

@@ -9,9 +9,9 @@
       </v-col>
       <v-card class="card-angebot mt-8 pt-14">
         <v-form v-show="!sendRequest" ref="formRef">
-          <AngebotTimeline :active="showForm" />
+          <AngebotTimeline class="d-none d-sm-flex" :active="showForm" />
           <div class="data-form" v-show="showForm === 1">
-            <v-row>
+            <v-row class="form-fields">
               <v-col col="12"
                 ><v-text-field
                   v-model="data.vorname"
@@ -25,7 +25,7 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-            <v-row>
+            <v-row class="form-fields">
               <v-col col="12">
                 <v-text-field
                   v-model="data.email"
@@ -44,7 +44,7 @@
             </v-row>
           </div>
           <div class="umzugsinfo-form" v-show="showForm === 2">
-            <v-row>
+            <v-row class="form-fields">
               <v-col col="12" class="align-self-center">
                 <input
                   type="date"
@@ -54,7 +54,7 @@
               </v-col>
               <v-col col="12"> </v-col>
             </v-row>
-            <v-row class="d-flex justify-space-between mb-5 mt-3">
+            <v-row class="form-fields d-flex justify-space-between mb-5 mt-3">
               <StaedteBayernInputVue @ladeStelle="getData" />
             </v-row>
           </div>
@@ -231,5 +231,11 @@ const submitForm = () => {
   min-width: 0;
   border-bottom: 1px solid rgb(118 118 118 / 56%);
   opacity: var(--v-high-emphasis-opacity);
+}
+@media screen and (max-width: 480px) {
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
